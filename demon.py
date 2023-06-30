@@ -258,7 +258,7 @@ def login():
 		
 def login_lagi334():
 	try:
-		cetak(nel('Disarankan Untuk Menggunakan Cookie Yang Masih Fresh Untuk Melakukan Crack Account',width=90,style=f"bold white"))
+		cetak(panel('Disarankan Untuk Menggunakan Cookie Yang Masih Fresh Untuk Melakukan Crack Account',width=90,style=f"bold red"))
 		your_cookies = input(' [+] Masukan Cookie : ')
 		with requests.Session() as r:
 			try:
@@ -355,6 +355,7 @@ def menu(my_name,my_id):
 	console.print(Columns(dia))
 	cetak(panel(f'\n[bold white][1][bold green] Crack By Friend List   [bold white][6][bold green] Crack By Username     \n[bold white][2][bold green] Crack By Bulk          [bold white][7][bold green] Crack By Followers     \n[bold white][3][bold green] Crack By Groups        [bold white][8][bold green] Crack By Comments        \n[bold white][4][bold green] Crack By Email         [bold white][9][bold yellow] Check Checkpoint Account  \n[bold white][5][bold green] Crack By Dump          [bold white][0][bold cyan] Check Result\n\n[bold white][X][bold red] Delete Cookies   ',style=f"bold red",title="Menu"))
 	cetak(panel(f'[bold white]Type [bold cyan] Dump ID [bold white] Untuk Memasuki fitur dump',style=f"bold red"))
+	cetak(panel(f'[bold white]Type [bold cyan] insta [bold white] Untuk Memasuki Crack Instagram',style=f"bold red"))
 	_____demonlord___27____ = input(f' [+] Choose Menu : ')
 	if _____demonlord___27____ in ['1','01']:
 		brayen_dump()
