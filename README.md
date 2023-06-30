@@ -1,6 +1,6 @@
 # Hell
 
-Hell adalah tools cr4ck untuk fb dimana tools ini login dengan cookie
+Hell adalah tools cr4ck untuk fb dan Instagram dimana tools ini menggunakan methode Bruteforce attack
 
 ## Installation
 
@@ -18,21 +18,14 @@ pip3 install -r requirements.txt
 ```cd hell
 
 python3 demon.py
-
+```
 masukan cookies kalian disarankan menggunakan ekstension Cookiedough
 
 setelah itu jalankan lagi perintah
-
-python3 demon.py
-
-
-
-
-
-
-
-
 ```
+python3 demon.py
+```
+
 
 
 
